@@ -17,7 +17,7 @@ def APIview(request):
 	if query:
 		asin = query
 	else:
-		asin = B07BC6DPBV # ASIN POR DEFECTO
+		asin = "B07BC6DPBV" # ASIN POR DEFECTO
 
 	headers = {'Cache-Control': 'no-cache', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'}
 	urlbase = "https://www.amazon.com/dp/"
