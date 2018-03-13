@@ -1,4 +1,7 @@
+#!/bin/bash
+
 echo Script de instalacion
+sleep 2s
 
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
