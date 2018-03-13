@@ -45,11 +45,20 @@ def APIview(request):
 	#OBTENER BULLETS--------------------------------
 	#-----------------------------------------------
 
-	bulletstag = soup.find(id="featurebullets_feature_div")	
-	bullet1 = bulletstag.contents[1].find_all("li")[4].text
+	bulletstag = soup.find(id="featurebullets_feature_div")
+	leng = len(bulletstag.contents[1])
+	bullet1 = "None"
+	bullet2 = "None"
+	if leng == 6:	
+		bullet1 = bulletstag.contents[1].find_all("li")[4].text #Standard
+		bullet2 = bulletstag.contents[1].find_all("li")[5].text
+	else:
+		bullet1 = bulletstag.contents[1].find_all("li")[4].text #Premiun
+		bullet2 = bulletstag.contents[1].find_all("li")[6].text
+		
 	bullet1 = bullet1.replace("\n","")
 	bullet1 = bullet1.replace("\t","")
-	bullet2 = bulletstag.contents[1].find_all("li")[5].text
+	
 	bullet2 = bullet2.replace("\n","")
 	bullet2 = bullet2.replace("\t","")
 
