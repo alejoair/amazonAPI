@@ -12,7 +12,7 @@ import re
 
 def APIview(request):
 
-	query = request.GET.get("query") #OBTIENE EL QUERY
+	query = request.GET.get("asin") #OBTIENE EL QUERY
 	asin = ""
 	if query:
 		asin = query
