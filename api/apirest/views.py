@@ -37,25 +37,32 @@ def APIview(request):
 	#Obtiene BSR----------------------------------
 	#---------------------------------------------
 	bsrtag = soup.find(id="SalesRank")
+	bsr = "Sin Ranking"
 	if bsrtag:
 		bsr = bsrtag.contents[2]
 	else:
 		bsr = "Sin Ranking"
-
+	bsr = bsr.replace(" in Clothing, Shoes & Jewelry (","")
 	#OBTENER BULLETS--------------------------------
 	#-----------------------------------------------
 
-	bulletstag = soup.find(id="featurebullets_feature_div")
+	bulletstag = soup.find(id="feature-bullets")
 	leng = len(bulletstag.contents[1])
-	bullet1 = "None"
+	lista = bulletstag.contents[1].find_all("li")
+	bullet1 = str(bulletstag) + "bullet 1"
 	bullet2 = "None"
-	if leng == 6:	
-		bullet1 = bulletstag.contents[1].find_all("li")[3].text #Standard
-		bullet2 = bulletstag.contents[1].find_all("li")[4].text
-	else:
-		bullet1 = bulletstag.contents[1].find_all("li")[3].text #Premiun
-		bullet2 = bulletstag.contents[1].find_all("li")[5].text
-
+	if leng == 6 :	
+		bullet1 = lista[3].text #6
+		bullet2 = lista[4].text
+	elif leng == 7 :
+		bullet1 = lista[3].text #7
+		bullet2 = lista[5].text
+	elif leng == 4 :
+		bullet1 = lista[3].text #4
+		bullet2 = "Sin descripcion"
+	else:	
+		bullet1 = lista[3].text #otros
+		bullet2 = lista[4].text
 	bullet1 = bullet1.replace("\n","")
 	bullet1 = bullet1.replace("\t","")
 	
