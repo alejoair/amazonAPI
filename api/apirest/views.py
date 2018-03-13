@@ -50,12 +50,12 @@ def APIview(request):
 	bullet1 = "None"
 	bullet2 = "None"
 	if leng == 6:	
-		bullet1 = bulletstag.contents[1].find_all("li")[4].text #Standard
-		bullet2 = bulletstag.contents[1].find_all("li")[5].text
+		bullet1 = bulletstag.contents[1].find_all("li")[3].text #Standard
+		bullet2 = bulletstag.contents[1].find_all("li")[4].text
 	else:
-		bullet1 = bulletstag.contents[1].find_all("li")[4].text #Premiun
-		bullet2 = bulletstag.contents[1].find_all("li")[6].text
-		
+		bullet1 = bulletstag.contents[1].find_all("li")[3].text #Premiun
+		bullet2 = bulletstag.contents[1].find_all("li")[5].text
+
 	bullet1 = bullet1.replace("\n","")
 	bullet1 = bullet1.replace("\t","")
 	
