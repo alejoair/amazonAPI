@@ -5,5 +5,5 @@ sleep 2s
 
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
-sudo apt-get install python3.6 -Y
-sudo apt-get install python3-pip -Y
+sudo apt-get install python3.6 -y
+sudo apt-get install python3-pip -y
