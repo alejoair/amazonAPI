@@ -28,6 +28,8 @@ def APIview(request):
 	#---------------------------------------------------
 	#----------Hace el Request-----------------------------------------
 	respuesta = req.get(urlfull,headers=headers)
+	if respuesta.status_code != 200:
+		return JsonResponse({"ERROR":"ERROR 500"},safe= False)
 	soup = bs4.BeautifulSoup(respuesta.content,"lxml")
 
 	#-------------------------------------------------
