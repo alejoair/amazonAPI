@@ -17,8 +17,6 @@ def APIview(request):
 	if query:
 		asin = query
 	else:
-
-		asin = "B07BC6DPBV" # ASIN POR DEFECTO
 		return JsonResponse({"titulo": "SIN ASIN"}, safe=False)
 	if query == "ERROR":
 		return JsonResponse({"titulo": "ERROR"}, safe=False)
