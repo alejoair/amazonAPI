@@ -49,7 +49,11 @@ def APIview(request):
 	#-----------------------------------------------
 
 	bulletstag = soup.find(id="feature-bullets")
-	leng = len(bulletstag.contents[1])
+	leng = 0
+	try:
+		leng = len(bulletstag.contents[1])
+	except:
+		return JsonResponse({"ERROR":"ERROR en la lista"},safe= False)
 	lista = bulletstag.contents[1].find_all("li")
 	bullet1 = str(bulletstag) + "bullet 1"
 	bullet2 = "None"
