@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
-
+from django.views.decorators.cache import never_cache
 
 import requests as req
 import bs4 
@@ -10,6 +10,7 @@ import json
 import re
 # Create your views here.
 
+@never_cache
 def APIview(request):
 
 	query = request.GET.get("asin") #OBTIENE EL QUERY
