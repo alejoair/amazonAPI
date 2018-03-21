@@ -12,7 +12,7 @@ import re
 
 @never_cache
 def APIview(request):
-
+	print("se llamo la api")
 	query = request.GET.get("asin") #OBTIENE EL QUERY
 	urlimg = request.GET.get("urlimg") #OBTIENE EL QUERY
 	asin = ""
