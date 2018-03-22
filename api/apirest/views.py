@@ -35,7 +35,7 @@ def APIview(request):
 		return JsonResponse({"ERROR":"ERROR al hacer Query"},safe= False)
 
 	if respuesta.status_code != 200:
-		print("ERROR 500")
+		print(respuesta.status_code)
 		return JsonResponse({"ERROR":"ERROR 500"},safe= False)
 	soup = bs4.BeautifulSoup(respuesta.content,"lxml")
 
