@@ -32,7 +32,7 @@ def APIview(request):
 	try:
 		respuesta = req.get(urlfull,headers=headers)
 	except:
-		return JsonResponse({"ERROR":"ERROR 500"},safe= False)
+		return JsonResponse({"ERROR":"ERROR al hacer Query"},safe= False)
 
 	if respuesta.status_code != 200:
 		print("ERROR 500")

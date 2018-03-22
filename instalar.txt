@@ -1,11 +1,19 @@
-Python---------
+Python--PIP--GIT-----
 
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
-sudo apt-get install python3.6
+sudo apt-get install python3.6 -Y
+sudo apt-get install python3-pip -Y
+sudo apt-get install git -Y
+VENV---------------------
+
+
+
+
 
 LXML ---------------------
 
 sudo apt-get install libxml2-dev libxslt-dev python-dev
+sudo apt-get install python3-lxml
 sudo apt-get build-dep python3-lxml
 pip3 install lxml
