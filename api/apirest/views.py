@@ -66,7 +66,7 @@ def APIview(request):
 	try:
 		leng = len(bulletstag.contents[1])
 	except:
-		return JsonResponse({"ERROR":"ERROR en la lista"},safe= False)
+		 print("error en la lista")#return JsonResponse({"ERROR":"ERROR en la lista"},safe= False)
 	lista = bulletstag.contents[1].find_all("li")
 	bullet1 = str(bulletstag) + "bullet 1"
 	bullet2 = "None"
